@@ -39,7 +39,14 @@ body{
     margin-bottom: 20px;
 }
 
-.contact-input{
-    
+.contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
 }
 
