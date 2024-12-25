@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <dic class="input-box">
-        <input type="password" placeholder="password">
-        <img src="eye-close.png" alt=""> 
-    </dic>
-    
+    <div class="input-box">
+        <input type="password" placeholder="password" id="password">
+        <img src="eye-close.png" id="eyeicon" alt="Toggle Password Visibility"> 
+    </div>
+    <script>
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+
+        eyeicon.onclick = function() {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeicon.src = "eye-open.png"; // Use '=' for assignment
+            } else {
+                password.type = "password";
+                eyeicon.src = "eye-close.png"; // Use '=' for assignment
+            }
+        };
+    </script>
 </body>
 </html>
