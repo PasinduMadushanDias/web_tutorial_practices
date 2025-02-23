@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Your Creative Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      font-size: 16px;
+      background-color: #f4f4f4;
+      color: #4B0082; /* Dark purple text */
+    }
+
+    header {
+      background-color: #6A0DAD; /* Purple header */
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #9B30FF; /* Lighter purple on hover */
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    #home {
+      background-color: #D8BFD8; /* Light purple background */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #home h1 {
+      font-size: 48px;
+      color: #4B0082;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    #home p {
+      font-size: 22px;
+      margin-top: 10px;
+      color: #6A0DAD;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      background-color: #9B30FF; /* Lighter purple button */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #8A2BE2; /* Slightly darker purple on hover */
+    }
+
+    #about {
+      background-color: #E6E6FA; /* Lavender background */
+      padding: 60px 20px;
+    }
+
+    #about h2 {
+      margin-bottom: 20px;
+      font-size: 36px;
+      color: #4B0082;
+    }
+
+    #projects {
+      background-color: #D8BFD8; /* Light purple background */
+      padding: 60px 20px;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .project {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      background-color: #D3B2E3; /* Slightly purple hover effect */
+    }
+
+    .project h3 {
+      font-size: 24px;
+      color: #4B0082;
+      margin-bottom: 10px;
+    }
+
+    #contact {
+      background-color: #E6E6FA; /* Lavender background */
+      padding: 60px 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #6A0DAD; /* Purple border */
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      background-color: #9B30FF; /* Lighter purple for submit button */
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #8A2BE2; /* Darker purple on hover */
+    }
+
+    #form-message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #9B30FF;
+      display: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      background-color: #6A0DAD; /* Purple footer */
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="home-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Your Creative Journey Starts Here!</p>
+      <button onclick="scrollToSection('#about')">Explore More</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a creative developer with a passion for design, code, and problem-solving. I build interactive and beautiful web applications.</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Project 1</h3>
+        <p>Description of Project 1</p>
+        <button onclick="viewProject('Project 1')">View Project</button>
+      </div>
+      <div class="project">
+        <h3>Project 2</h3>
+        <p>Description of Project 2</p>
+        <button onclick="viewProject('Project 2')">View Project</button>
+      </div>
+      <div class="project">
+        <h3>Project 3</h3>
+        <p>Description of Project 3</p>
+        <button onclick="viewProject('Project 3')">View Project</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="form-message" class="hidden"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling to sections when a button is clicked
+    function scrollToSection(sectionId) {
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // Project button logic (simulated "View Project" behavior)
+    function viewProject(projectName) {
+      alert(`You are now viewing: ${projectName}`);
+    }
+
+    // Form submission logic (simulated)
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent page refresh
+
+      const formMessage = document.getElementById('form-message');
+      formMessage.innerHTML = 'Thank you for reaching out! I will get back to you soon.';
+      formMessage.style.display = 'block';
+
+      // Clear the form fields
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    });
+  </script>
+</body>
+</html>
