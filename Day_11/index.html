@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">My Portfolio</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Hello, I'm <span class="highlight">Pasindu</span></h2>
+            <p>Web Developer | Web3 Enthusiast | Tech Creator</p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>A passionate developer with expertise in web development and blockchain technology.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-card">Project 1</div>
+            <div class="project-card">Project 2</div>
+            <div class="project-card">Project 3</div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Let's connect and create something amazing!</p>
+        <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else {
+                        entry.target.classList.remove("show");
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            document.querySelectorAll("section").forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero {
+            background: linear-gradient(to right, #4b56cc, #13b691);
+            color: white;
+            padding: 100px 20px;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #ff6f61, #de4313);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            font-size: 18px;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #de4313, #ff6f61);
+        }
+        section {
+            padding: 50px 20px;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        .show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .project-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project-card {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</body>
+</html>
